@@ -1,1 +1,62 @@
 Version Control with GIT
+// Check version of GIT
+git --version
+
+// Setting user
+git config --global user.name "Name"
+git config --global user.email "Name@git.com"
+
+// Create git into folder
+git init
+
+// Check Setting
+git config --global --global --list
+
+// Get status
+git status
+
+// Check log
+git log
+
+// Add file to status staged
+git add text.txt
+git add .
+
+// Commit file to status Local Repository
+git commit -m "message"
+
+// Revert version
+git reset --hard <committed id>
+
+// Change to be staged to status untracked
+git revert head <file>
+
+// Change to be committed to status untracked
+git rm --cached <file>
+
+// Check branch
+git branch --all
+
+// Create branch
+git branch <name branch>
+
+// Delete branch
+git branch --delete <name branch>
+
+// Move working of branch
+git checkout <new name branch>
+
+// Add Remote
+git remote add origin <URL>
+
+// Show all Remote
+git remote -v
+
+// Send to Remote
+git push origin <name branch>
+
+// Get from Remote
+git pull origin <name branch>
+
+// Delete to Remote
+git push --delete origin <name branch>
