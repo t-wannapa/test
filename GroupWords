@@ -1,0 +1,19 @@
+function groupWord(arrayValue) {
+  for(var i = 0; i< arrayValue.length; i++) {
+    let data_sort = arrayValue[i].split("").sort().join("");
+    if(data_sort in map) {
+     map[data_sort].push(arrayValue[i])
+    }
+    else {
+     map[data_sort] = [];
+     map[data_sort].push(arrayValue[i])
+    }
+  }
+}
+
+const map = {};
+const data = "VMRCO, VORCM, MCRTOX, ZXTAC, XZATC, XMTCOR, OXVS, AZTXC, VXOS, RZAT, MRCOTX, SVXO, TRAZ, ZTAR, MVOCR";
+const data_set = data.split(", ");
+
+groupWord(data_set);
+console.log(map);
