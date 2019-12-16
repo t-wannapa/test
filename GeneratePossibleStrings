@@ -1,0 +1,24 @@
+function getNewValue(value, len) {
+  return value.slice(1, len) + value.slice(0, 1);
+}
+
+function switchCharacters(value, round, len) {
+  return value.substr(round, 1) + value.substr(0, round) + value.substr(round+1, len);
+}
+
+function generatePosibleString(result, newValue, input, round, len) {
+  if (round === len) { 
+    return result;
+ }
+  else if (result.indexOf(newValue) != -1) { 
+    round++;
+    return generatePosibleString(result, switchCharacters(input, round, len), input, round, len);
+  }
+  else {
+    result.push(newValue);
+    return generatePosibleString(result, getNewValue(newValue, len), input, round, len);
+  }
+}
+
+const data = "ABC";
+generatePosibleString([], data, data, 0, data.length);
